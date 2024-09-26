@@ -10,41 +10,49 @@ class CoffePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Coffee Page")),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // Número de columnas
-            mainAxisSpacing: 10, // Espaciado entre tarjetas en el eje principal (vertical)
-            crossAxisSpacing: 10, // Espaciado entre tarjetas en el eje transversal (horizontal)
-            childAspectRatio: 5 / 3, // Relación de aspecto para que las tarjetas tengan buena proporción
+            crossAxisCount: 2, 
+            mainAxisSpacing: 10, 
+            crossAxisSpacing: 10, 
+            childAspectRatio: 5 / 3, 
           ),
-          itemCount: 10, // Número de tarjetas
+          itemCount: 10, 
           itemBuilder: (context, index) {
             return Card(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
+              clipBehavior: Clip.antiAlias, 
+              child: Stack(
                 children: <Widget>[
-                  const ListTile(
-                    leading: Icon(Icons.album),
-                    title: Text('The Enchanted Nightingale'),
-                    subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
+                  Image.asset(
+                    'asset/screen/Capuccino.jpeg',
+                    fit: BoxFit.cover,
+                    height: double.infinity, 
+                    width: double.infinity,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      TextButton(
-                        child: const Text('BUY TICKETS'),
-                        onPressed: () {/* ... */},
+                  const ListTile(
+                        leading: Icon(Icons.coffee, color: Colors.white),
+                        title: Text(
+                          'Cappuccino',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
-                      const SizedBox(width: 8),
-                      TextButton(
-                        child: const Text('LISTEN'),
-                        onPressed: () {/* ... */},
-                      ),
-                      const SizedBox(width: 8),
-                    ],
+                  const Center(
+                    child: Text(
+                      'Hola',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  
+                  Positioned(
+                    bottom: 8,
+                    right: 8,
+                    child: IconButton(
+                      onPressed: () {/* ... */},
+                      icon: const Icon(Icons.heart_broken),
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),
@@ -55,3 +63,4 @@ class CoffePage extends StatelessWidget {
     );
   }
 }
+
