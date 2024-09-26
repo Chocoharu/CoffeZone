@@ -1,4 +1,5 @@
 import 'package:coffe_zone/pages/init.dart';
+import 'package:coffe_zone/pages/coffepage.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -22,10 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
       'Index 0: Home',
       style: optionStyle,
     ),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
+    CoffePage(),
 
     Init(),
 
