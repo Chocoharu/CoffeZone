@@ -1,6 +1,8 @@
-import 'package:coffe_zone/pages/init.dart';
+import 'package:coffe_zone/pages/addRecipe.dart';
 import 'package:coffe_zone/pages/coffepage.dart';
 import 'package:coffe_zone/pages/shop.dart';
+import 'package:coffe_zone/structures/product.dart';
+import 'package:coffe_zone/structures/recipe.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -16,14 +18,58 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int _selectedIndex = 0;
 
-      
-  static const List<Widget> _widgetOptions = <Widget>[
-    Shop(),
-    
-    CoffePage(),
+  List<Recipe> recipes = [
+  Recipe(
+    name: 'Cappuccino',
+    preparationTime: '5 minutes',
+    ingredients: ['Coffee', 'Milk', 'Sugar'],
+    description: 'A delicious coffee drink.',
+    user: 'Chef Juan',
+    publicationTime: DateTime.now(),
+    image: 'asset/screen/Capuccino.jpeg',
+  ),
+  
+];
 
-    Init(),
+  List<Product> products = [
+    Product(
+      name: 'Cafetera',
+      price: 10.02,
+      availableQuantity: 3,
+      description: 'Cafetera italiana',
+      user: 'Maria López',
+      publicationDate: DateTime.now()
+    ),
+    Product(
+      name: 'Filtrador',
+      price: 5.99,
+      availableQuantity: 8,
+      description: 'Filtro ideal para tus granos de cafe.',
+      user: 'Julio Cesar',
+      publicationDate: DateTime.now()
+    ),
   ];
+
+  late List<Widget> _widgetOptions;
+
+  @override
+  void initState() {
+    super.initState();
+
+    
+    _widgetOptions = <Widget>[
+      CoffePage(recipes: recipes),
+      Addrecipe(onAddRecipe: _addRecipe),
+      Shop(productsList: products),
+    ];
+  }
+
+  void _addRecipe(Recipe recipe) {
+    setState(() {
+      recipes.add(recipe); 
+      _widgetOptions[0] = CoffePage(recipes: recipes); 
+    });
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -46,18 +92,18 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Shop',
-          ),
-
-          BottomNavigationBarItem(
             icon: Icon(Icons.coffee),
             label: 'Coffee',
           ),
 
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'Init',
+            icon: Icon(Icons.add),
+            label: 'New',
+          ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart_rounded),
+            label: 'Shop',
           ),
         ],
 
@@ -68,3 +114,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+

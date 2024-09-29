@@ -1,0 +1,9 @@
+flutter_native_splash:
+  color: "#ffffff"
+  color_dark: "#272727"
+  image: asset/screen/Capuccino.jpeg
+
+  android_12:
+    color: "#ffffff"
+    color_dark: "#272727"
+    image: asset/screen/Capuccino.jpeg

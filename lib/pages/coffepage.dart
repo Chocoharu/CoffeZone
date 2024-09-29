@@ -1,3 +1,4 @@
+import 'package:coffe_zone/structures/recipe.dart';
 import 'package:flutter/material.dart';
 
 
@@ -5,8 +6,9 @@ import 'package:flutter/material.dart';
 
 
 class CoffePage extends StatelessWidget {
-  const CoffePage({super.key});
-
+  final List<Recipe> recipes;
+  
+  const CoffePage({super.key, required this.recipes}); 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,38 +21,68 @@ class CoffePage extends StatelessWidget {
             crossAxisSpacing: 10, 
             childAspectRatio: 5 / 3, 
           ),
-          itemCount: 10, 
+          itemCount: recipes.length, 
           itemBuilder: (context, index) {
+            final recipe = recipes[index];
             return Card(
               clipBehavior: Clip.antiAlias, 
               child: Stack(
                 children: <Widget>[
                   Image.asset(
-                    'asset/screen/Capuccino.jpeg',
+                    recipe.image,
                     fit: BoxFit.cover,
                     height: double.infinity, 
                     width: double.infinity,
                   ),
-                  const ListTile(
-                        leading: Icon(Icons.coffee, color: Colors.white),
-                        title: Text(
-                          'Cappuccino',
-                          style: TextStyle(color: Colors.white),
+                  Container(
+                    color: Colors.black54,
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          recipe.name,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                  const Center(
-                    child: Text(
-                      'Hola',
-                      style: TextStyle(color: Colors.white),
+                        const SizedBox(height: 4),
+                        Text(
+                          'Tiempo de preparación: ${recipe.preparationTime}',
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          'Ingredientes: ${recipe.ingredients.join(', ')}',
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          'Descripción: ${recipe.description}',
+                          style: const TextStyle(color: Colors.white),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis, 
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          'Publicado por: ${recipe.user}',
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                        Text(
+                          'Fecha de publicación: ${recipe.publicationTime.toLocal().toString().split(' ')[0]}', // Formato de fecha
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                      ],
                     ),
                   ),
-                  
                   Positioned(
                     bottom: 8,
                     right: 8,
                     child: IconButton(
-                      onPressed: () {/* ... */},
-                      icon: const Icon(Icons.heart_broken),
+                      onPressed: () {/* Acción para marcar como favorito */},
+                      icon: const Icon(Icons.favorite_border),
                       color: Colors.white,
                     ),
                   ),
