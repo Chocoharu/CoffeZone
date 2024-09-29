@@ -40,9 +40,6 @@ class _AddrecipeState extends State<Addrecipe> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Agregar Receta'),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(

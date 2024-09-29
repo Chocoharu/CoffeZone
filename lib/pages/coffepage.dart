@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 
 class CoffePage extends StatelessWidget {
   final List<Recipe> recipes;
-  
   const CoffePage({super.key, required this.recipes}); 
   @override
   Widget build(BuildContext context) {
@@ -95,4 +94,3 @@ class CoffePage extends StatelessWidget {
     );
   }
 }
-
