@@ -1,5 +1,6 @@
 import 'package:coffe_zone/pages/addRecipe.dart';
 import 'package:coffe_zone/pages/coffepage.dart';
+import 'package:coffe_zone/pages/favouriterecipe.dart';
 import 'package:coffe_zone/pages/shop.dart'; 
 import 'package:coffe_zone/pages/userpage.dart';
 import 'package:coffe_zone/structures/product.dart';
@@ -31,6 +32,8 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
   ];
 
+  List<Recipe> favoriteRecipes = []; // Lista para almacenar recetas favoritas
+
   List<Product> products = [
     Product(
       name: 'Cafetera',
@@ -54,19 +57,32 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    super.initState();
-
-    _widgetOptions = <Widget>[
-      CoffePage(recipes: recipes),
-      Addrecipe(onAddRecipe: _addRecipe),
-      Shop(productsList: products),
-    ];
-  }
+  super.initState();
+  _widgetOptions = <Widget>[
+    CoffePage(
+      recipes: recipes,
+      favoriteRecipes: favoriteRecipes, // Pasa la lista de recetas favoritas
+      onFavoriteToggle: _toggleFavorite,
+    ),
+    Addrecipe(onAddRecipe: _addRecipe),
+    Shop(productsList: products),
+  ];
+}
 
   void _addRecipe(Recipe recipe) {
     setState(() {
       recipes.add(recipe);
-      _widgetOptions[0] = CoffePage(recipes: recipes);
+      _widgetOptions[0] = CoffePage(recipes: recipes, onFavoriteToggle: _toggleFavorite, favoriteRecipes: favoriteRecipes,);
+    });
+  }
+
+  void _toggleFavorite(Recipe recipe) {
+    setState(() {
+      if (favoriteRecipes.contains(recipe)) {
+        favoriteRecipes.remove(recipe); // Remover de favoritos
+      } else {
+        favoriteRecipes.add(recipe); // Agregar a favoritos
+      }
     });
   }
 
@@ -153,6 +169,19 @@ class _MyHomePageState extends State<MyHomePage> {
               onTap: () {
                 Navigator.pop(context);
                 _navigateToUserProfile();
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.star),
+              title: const Text('Favoritos'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Favouriterecipe(favoriteRecipes: favoriteRecipes ,recipes: recipes), // Pasa solo recetas favoritas
+                  ),
+                );
               },
             ),
           ],
