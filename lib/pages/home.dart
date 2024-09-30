@@ -32,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
   ];
 
-  List<Recipe> favoriteRecipes = []; // Lista para almacenar recetas favoritas
+  List<Recipe> favoriteRecipes = [];
 
   List<Product> products = [
     Product(
@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
   _widgetOptions = <Widget>[
     CoffePage(
       recipes: recipes,
-      favoriteRecipes: favoriteRecipes, // Pasa la lista de recetas favoritas
+      favoriteRecipes: favoriteRecipes,
       onFavoriteToggle: _toggleFavorite,
     ),
     Addrecipe(onAddRecipe: _addRecipe),
@@ -79,9 +79,9 @@ class _MyHomePageState extends State<MyHomePage> {
   void _toggleFavorite(Recipe recipe) {
     setState(() {
       if (favoriteRecipes.contains(recipe)) {
-        favoriteRecipes.remove(recipe); // Remover de favoritos
+        favoriteRecipes.remove(recipe);
       } else {
-        favoriteRecipes.add(recipe); // Agregar a favoritos
+        favoriteRecipes.add(recipe);
       }
     });
   }
@@ -179,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Favouriterecipe(favoriteRecipes: favoriteRecipes ,recipes: recipes), // Pasa solo recetas favoritas
+                    builder: (context) => Favouriterecipe(favoriteRecipes: favoriteRecipes),
                   ),
                 );
               },

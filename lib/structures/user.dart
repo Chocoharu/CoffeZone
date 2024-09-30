@@ -13,7 +13,6 @@ class User {
     this.comment = '',
   });
 
-  // Método para convertir el objeto a un mapa (por ejemplo, para JSON)
   Map<String, dynamic> toJson() {
     return {
       'name': name,
@@ -24,7 +23,6 @@ class User {
     };
   }
 
-  // Método estático para crear un objeto User desde un mapa
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       name: json['name'],

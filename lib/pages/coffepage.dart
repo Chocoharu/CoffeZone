@@ -23,13 +23,7 @@ class _CoffePageState extends State<CoffePage> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 10,
-            childAspectRatio: 1 / 1.8,
-          ),
+        child: ListView.builder(
           itemCount: widget.recipes.length,
           itemBuilder: (context, index) {
             final recipe = widget.recipes[index];
@@ -37,16 +31,17 @@ class _CoffePageState extends State<CoffePage> {
 
             return Card(
               clipBehavior: Clip.antiAlias,
-              child: Stack(
+              margin: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Image.asset(
                     recipe.image,
                     fit: BoxFit.cover,
-                    height: double.infinity,
                     width: double.infinity,
+                    height: 200,
                   ),
-                  Container(
-                    color: Colors.black54,
+                  Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,53 +49,53 @@ class _CoffePageState extends State<CoffePage> {
                         Text(
                           recipe.name,
                           style: const TextStyle(
-                            fontSize: 16,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
                           ),
                         ),
-                        const SizedBox(height: 4),
+                        const SizedBox(height: 8),
                         Text(
                           'Tiempo de preparación: ${recipe.preparationTime}',
-                          style: const TextStyle(color: Colors.white),
+                          style: const TextStyle(fontSize: 14),
                         ),
-                        const SizedBox(height: 4),
+                        const SizedBox(height: 8),
                         Text(
                           'Ingredientes: ${recipe.ingredients.join(', ')}',
-                          style: const TextStyle(color: Colors.white),
+                          style: const TextStyle(fontSize: 14),
                         ),
-                        const SizedBox(height: 4),
+                        const SizedBox(height: 8),
                         Text(
                           'Descripción: ${recipe.description}',
-                          style: const TextStyle(color: Colors.white),
+                          style: const TextStyle(fontSize: 14),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
-                        const SizedBox(height: 4),
+                        const SizedBox(height: 8),
                         Text(
                           'Publicado por: ${recipe.user}',
-                          style: const TextStyle(color: Colors.white),
+                          style: const TextStyle(fontSize: 14),
                         ),
+                        const SizedBox(height: 8),
                         Text(
-                          'Fecha de publicación: ${recipe.publicationTime.toLocal().toString().split(' ')[0]}', 
-                          style: const TextStyle(color: Colors.white),
+                          'Fecha de publicación: ${recipe.publicationTime.toLocal().toString().split(' ')[0]}',
+                          style: const TextStyle(fontSize: 14),
+                        ),
+                        const SizedBox(height: 8),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                widget.onFavoriteToggle(recipe);
+                              });
+                            },
+                            icon: Icon(
+                              isFavorite ? Icons.favorite : Icons.favorite_border,
+                              color: Colors.red,
+                            ),
+                          ),
                         ),
                       ],
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 8,
-                    right: 8,
-                    child: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          widget.onFavoriteToggle(recipe); // Activa el callback y actualiza el estado
-                        });
-                      },
-                      icon: Icon(
-                        isFavorite ? Icons.favorite : Icons.favorite_border,
-                        color: Colors.white,
-                      ),
                     ),
                   ),
                 ],

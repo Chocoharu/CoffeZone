@@ -1,7 +1,7 @@
 class Product {
   final String name;
   final double price;
-  final int availableQuantity;
+  int availableQuantity;
   final String description;
   final String user;
   final DateTime publicationDate;
