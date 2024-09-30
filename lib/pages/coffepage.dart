@@ -28,7 +28,7 @@ class _CoffePageState extends State<CoffePage> {
             crossAxisCount: 2,
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
-            childAspectRatio: 5 / 3,
+            childAspectRatio: 1 / 1.8,
           ),
           itemCount: widget.recipes.length,
           itemBuilder: (context, index) {

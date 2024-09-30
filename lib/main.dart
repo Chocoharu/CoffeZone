@@ -1,3 +1,4 @@
+import 'package:coffe_zone/pages/home.dart';
 import 'package:coffe_zone/pages/init.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Init(),
+      home: const Init() //MyHomePage(title: "Coffe zone"),
     );
   }
 }

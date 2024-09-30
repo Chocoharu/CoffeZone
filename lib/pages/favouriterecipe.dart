@@ -18,7 +18,7 @@ class Favouriterecipe extends StatelessWidget {
             crossAxisCount: 2,
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
-            childAspectRatio: 5 / 3,
+            childAspectRatio: 1 / 1.8,
           ),
           itemCount: favoriteRecipes.length, // Usa la lista de recetas favoritas
           itemBuilder: (context, index) {
