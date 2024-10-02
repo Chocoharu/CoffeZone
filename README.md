@@ -17,3 +17,5 @@
 - La aplicación debe tener una interfaz de usuario intuitiva con una navegación fácil entre las diferentes secciones.
 - La aplicación debe manejar errores de entrada del usuario y proporcionar mensajes claros y útiles en caso de que se produzcan errores.
 - La aplicación debe de contar con una opcion para compras.
+
+![UML](https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/UML_Dispositivos%20_Moviles.png)
