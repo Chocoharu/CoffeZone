@@ -23,4 +23,4 @@
 ![UML](https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/UML_Dispositivos%20_Moviles_Fondo.png?)
 
 ## Video
-[VideoP Presentacion](https://youtu.be/rEQ8AztcEuo)
+[Video Presentacion](https://youtu.be/rEQ8AztcEuo)
