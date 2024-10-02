@@ -156,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.blue,
               ),
               child: Text(
-                'Menú',
+                'Menu',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -165,7 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               leading: const Icon(Icons.person),
-              title: const Text('Perfil de Usuario'),
+              title: const Text('User Profile'),
               onTap: () {
                 Navigator.pop(context);
                 _navigateToUserProfile();
@@ -173,7 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               leading: const Icon(Icons.star),
-              title: const Text('Favoritos'),
+              title: const Text('Favourites'),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(
