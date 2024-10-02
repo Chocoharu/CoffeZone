@@ -1,8 +1,8 @@
-import 'package:coffe_zone/pages/addRecipe.dart';
-import 'package:coffe_zone/pages/coffepage.dart';
-import 'package:coffe_zone/pages/favouriterecipe.dart';
-import 'package:coffe_zone/pages/shop.dart'; 
-import 'package:coffe_zone/pages/userpage.dart';
+import 'package:coffe_zone/pages/Tap/addrecipe.dart';
+import 'package:coffe_zone/pages/Tap/coffepage.dart';
+import 'package:coffe_zone/pages/draw/favouriterecipe.dart';
+import 'package:coffe_zone/pages/Tap/shop.dart'; 
+import 'package:coffe_zone/pages/draw/userpage.dart';
 import 'package:coffe_zone/structures/product.dart';
 import 'package:coffe_zone/structures/recipe.dart';
 import 'package:coffe_zone/structures/user.dart';
