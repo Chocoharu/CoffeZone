@@ -1,13 +1,14 @@
 # Coffe Zone
 
 ## Descripción del Proyecto
-**Coffee Zone** es una aplicación móvil innovadora diseñada para los amantes del café. Esta plataforma permite a los usuarios explorar, compartir y guardar recetas de café de manera sencilla y eficiente. Con una interfaz intuitiva y atractiva, la aplicación se convierte en el compañero perfecto para aquellos que buscan descubrir nuevas formas de preparar café y gestionar sus recetas favoritas.
+**Coffee Zone** Es una aplicación móvil innovadora diseñada para los amantes del café. Esta plataforma permite a los usuarios explorar, compartir y guardar recetas de café de manera sencilla y eficiente. Con una interfaz intuitiva y atractiva, la aplicación se convierte en el compañero perfecto para aquellos que buscan descubrir nuevas formas de preparar café y gestionar sus recetas favoritas.
 
 ### Características Principales
 - **Exploración de Recetas**: Navega a través de una amplia variedad de recetas de café, donde puedes ver detalles como el nombre de la receta, tiempo de preparación, lista de ingredientes, descripción, autor y fecha de publicación.
 - **Sistema de Favoritos**: Permite a los usuarios marcar recetas como favoritas para acceder a ellas rápidamente. Las recetas favoritas se pueden visualizar en una sección dedicada, haciendo más fácil la búsqueda de tus preparaciones preferidas.
 - **Agregar Nuevas Recetas**: Los usuarios tienen la opción de contribuir a la aplicación añadiendo sus propias recetas. Se proporciona un formulario que incluye campos para nombre de la receta, tiempo de preparación, ingredientes, descripción e imagen, facilitando el proceso de creación.
 - **Perfil del Usuario**: La aplicación cuenta con una sección de perfil donde los usuarios pueden ver su información personal, incluyendo nombre, nombre de usuario, correo electrónico, fecha de nacimiento y cualquier comentario adicional.
+- **Tienda**: La aplicación cuenta con una seccion de compra la cual podremos comprar diferentes objetos relacionados al cadfe, se el caso de una cafetera, filtros, tazas, etc... la idea es que esta sección ayude a abarcar todo el mercado relacionado al café.
 
 ## Requerimientos
 - La aplicación debe de contar con un explorador de recetas.
@@ -18,4 +19,8 @@
 - La aplicación debe manejar errores de entrada del usuario y proporcionar mensajes claros y útiles en caso de que se produzcan errores.
 - La aplicación debe de contar con una opcion para compras.
 
+## UML
 ![UML](https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/UML_Dispositivos%20_Moviles_Fondo.png?)
+
+## Video
+[VideoP Presentacion](https://youtu.be/rEQ8AztcEuo)
