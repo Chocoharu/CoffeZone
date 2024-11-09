@@ -7,6 +7,7 @@ class Cart extends StatefulWidget {
   const Cart({super.key, required this.cartItems});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CartPageState createState() => _CartPageState();
 }
 

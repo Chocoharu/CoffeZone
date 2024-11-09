@@ -5,6 +5,7 @@ class Init extends StatefulWidget {
   const Init({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _InitState createState() => _InitState();
 }
 
@@ -18,6 +19,7 @@ class _InitState extends State<Init> {
 
       await Future.delayed(const Duration(seconds: 2));
 
+      // ignore: use_build_context_synchronously
       Navigator.of(context).push(_createRoute());
     }
   }

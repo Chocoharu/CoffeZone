@@ -15,4 +15,28 @@ class Recipe {
     required this.publicationTime,
     required this.image,
   });
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'preparationTime': preparationTime,
+      'ingredients': ingredients,
+      'description': description,
+      'user': user,
+      'publicationTime': publicationTime.toIso8601String(),
+      'image': image,
+    };
+  }
+
+  // Create a Recipe instance from a JSON map
+  factory Recipe.fromJson(Map<String, dynamic> json) {
+    return Recipe(
+      name: json['name'],
+      preparationTime: json['preparationTime'],
+      ingredients: List<String>.from(json['ingredients']),
+      description: json['description'],
+      user: json['user'],
+      publicationTime: DateTime.parse(json['publicationTime']),
+      image: json['image'],
+    );
+  }
 }

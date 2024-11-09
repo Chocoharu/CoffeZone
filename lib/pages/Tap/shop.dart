@@ -8,6 +8,7 @@ class Shop extends StatefulWidget {
   const Shop({super.key, required this.productsList});
 
   @override
+  // ignore: library_private_types_in_public_api
   _ShopState createState() => _ShopState();
 }
 

@@ -6,6 +6,9 @@ import 'package:coffe_zone/pages/draw/userpage.dart';
 import 'package:coffe_zone/structures/product.dart';
 import 'package:coffe_zone/structures/recipe.dart';
 import 'package:coffe_zone/structures/user.dart';
+import 'package:flutter/services.dart';
+//import 'dart:io';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -19,54 +22,57 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
+  bool isLoading = true;
+Future<List<Recipe>> loadRecipesFromAssets(String filePath) async {
+  try {
+    final jsonString = await rootBundle.loadString(filePath);
+    final jsonList = jsonDecode(jsonString) as List<dynamic>;
+    return jsonList.map((json) => Recipe.fromJson(json as Map<String, dynamic>)).toList();
+  } catch (e) {
+    print('Error loading recipes: $e');
+    return [];
+  }
+}
 
-  List<Recipe> recipes = [
-    Recipe(
-      name: 'Cappuccino',
-      preparationTime: '5 minutes',
-      ingredients: ['Coffee', 'Milk', 'Sugar'],
-      description: 'A delicious coffee drink.',
-      user: 'Chef Juan',
-      publicationTime: DateTime.now(),
-      image: 'asset/screen/Capuccino.jpeg',
-    ),
-  ];
+Future<List<Product>> loadProductsFromAssets(String filePath) async {
+  try {
+    final jsonString = await rootBundle.loadString(filePath);
+    final jsonList = jsonDecode(jsonString) as List<dynamic>;
+    return jsonList.map((json) => Product.fromJson(json as Map<String, dynamic>)).toList();
+  } catch (e) {
+    print('Error loading products: $e');
+    return [];
+  }
+}
+  List<Recipe> recipes = [];
 
   List<Recipe> favoriteRecipes = [];
 
-  List<Product> products = [
-    Product(
-      name: 'Cafetera',
-      price: 10.02,
-      availableQuantity: 3,
-      description: 'Cafetera italiana',
-      user: 'Maria López',
-      publicationDate: DateTime.now(),
-    ),
-    Product(
-      name: 'Filtrador',
-      price: 5.99,
-      availableQuantity: 8,
-      description: 'Filtro ideal para tus granos de cafe.',
-      user: 'Julio Cesar',
-      publicationDate: DateTime.now(),
-    ),
-  ];
+  List<Product> products = [];
 
   late List<Widget> _widgetOptions;
 
   @override
   void initState() {
   super.initState();
-  _widgetOptions = <Widget>[
-    CoffePage(
-      recipes: recipes,
-      favoriteRecipes: favoriteRecipes,
-      onFavoriteToggle: _toggleFavorite,
-    ),
-    Addrecipe(onAddRecipe: _addRecipe),
-    Shop(productsList: products),
-  ];
+  _loadData();
+}
+Future<void> _loadData() async {
+  recipes = await loadRecipesFromAssets('asset/JSON/recipe.json');
+  products = await loadProductsFromAssets('asset/JSON/product.json');
+
+  setState(() {
+    _widgetOptions = <Widget>[
+      CoffePage(
+        recipes: recipes,
+        favoriteRecipes: favoriteRecipes,
+        onFavoriteToggle: _toggleFavorite,
+      ),
+      Addrecipe(onAddRecipe: _addRecipe),
+      Shop(productsList: products),
+    ];
+    isLoading = false;
+  });
 }
 
   void _addRecipe(Recipe recipe) {
@@ -125,9 +131,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
+      body: isLoading
+        ? const Center(child: CircularProgressIndicator())
+        : Center(
+            child: _widgetOptions.elementAt(_selectedIndex),
+          ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Cappuccino",
+    "preparationTime": "5 minutes",
+    "ingredients": ["Coffee", "Milk", "Sugar"],
+    "description": "A delicious coffee drink.",
+    "user": "Chef Juan",
+    "publicationTime": "2024-11-09T12:00:00Z",
+    "image": "asset/screen/Capuccino.jpeg"
+  }
+]
