@@ -1,5 +1,5 @@
 import 'package:coffe_zone/pages/cart.dart';
-import 'package:coffe_zone/structures/product.dart';
+import 'package:coffe_zone/class/product.dart';
 import 'package:flutter/material.dart';
 
 class Shop extends StatefulWidget {

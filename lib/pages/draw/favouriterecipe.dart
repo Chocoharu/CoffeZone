@@ -1,4 +1,4 @@
-import 'package:coffe_zone/structures/recipe.dart';
+import 'package:coffe_zone/class/recipe.dart';
 import 'package:flutter/material.dart';
 
 class Favouriterecipe extends StatelessWidget {

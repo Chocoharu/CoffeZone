@@ -3,9 +3,10 @@ import 'package:coffe_zone/pages/Tap/coffepage.dart';
 import 'package:coffe_zone/pages/draw/favouriterecipe.dart';
 import 'package:coffe_zone/pages/Tap/shop.dart'; 
 import 'package:coffe_zone/pages/draw/userpage.dart';
-import 'package:coffe_zone/structures/product.dart';
-import 'package:coffe_zone/structures/recipe.dart';
-import 'package:coffe_zone/structures/user.dart';
+import 'package:coffe_zone/class/product.dart';
+import 'package:coffe_zone/class/recipe.dart';
+import 'package:coffe_zone/class/user.dart';
+import 'package:coffe_zone/utils/databasehelper.dart';
 import 'package:flutter/services.dart';
 //import 'dart:io';
 import 'dart:convert';
@@ -23,6 +24,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   bool isLoading = true;
+   final DatabaseHelper _dbHelper = DatabaseHelper();
+   
 Future<List<Recipe>> loadRecipesFromAssets(String filePath) async {
   try {
     final jsonString = await rootBundle.loadString(filePath);
@@ -60,6 +63,14 @@ Future<List<Product>> loadProductsFromAssets(String filePath) async {
 Future<void> _loadData() async {
   recipes = await loadRecipesFromAssets('asset/JSON/recipe.json');
   products = await loadProductsFromAssets('asset/JSON/product.json');
+  for (var recipe in recipes) {
+    await _dbHelper.insertRecipe(recipe);
+  }
+
+  // Guardar los productos en la base de datos
+  for (var product in products) {
+    await _dbHelper.insertProduct(product);
+  }
 
   setState(() {
     _widgetOptions = <Widget>[

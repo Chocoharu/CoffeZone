@@ -1,4 +1,5 @@
 class Product {
+  int? id;
   final String name;
   final double price;
   int availableQuantity;
@@ -7,6 +8,7 @@ class Product {
   final DateTime publicationDate;
 
   Product({
+    this.id,
     required this.name,
     required this.price,
     required this.availableQuantity,
@@ -17,6 +19,7 @@ class Product {
   // Convert a Product instance to a JSON map
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'name': name,
       'price': price,
       'availableQuantity': availableQuantity,
@@ -29,6 +32,7 @@ class Product {
   // Create a Product instance from a JSON map
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
+      id: json['id'],
       name: json['name'],
       price: json['price'],
       availableQuantity: json['availableQuantity'],
@@ -36,5 +40,29 @@ class Product {
       user: json['user'],
       publicationDate: DateTime.parse(json['publicationDate']),
     );
+  }
+  factory Product.fromMap(Map<String, dynamic> map) {
+    return Product(
+      id: map['id'],
+      name: map['name'],
+      price: map['price'],
+      availableQuantity: int.parse(map['availableQuantity']),
+      description: map['description'],
+      user: map['user'],
+      publicationDate: DateTime.parse(map['publicationTime']),
+    );
+  }
+
+  // Método para convertir una instancia de Recipe en un mapa para la base de datos
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'price': price,
+      'availableQuantity': availableQuantity,
+      'description': description,
+      'user': user,
+      'publicationTime': publicationDate.toIso8601String(),
+    };
   }
 }
