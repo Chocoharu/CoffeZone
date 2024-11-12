@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:coffe_zone/class/product.dart';
+import 'package:coffe_zone/structures/product.dart';
 
 class Cart extends StatefulWidget {
   final Map<Product, int> cartItems;
