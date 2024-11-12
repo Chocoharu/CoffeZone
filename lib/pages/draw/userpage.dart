@@ -1,4 +1,4 @@
-import 'package:coffe_zone/structures/user.dart';
+import 'package:coffe_zone/class/user.dart';
 import 'package:flutter/material.dart';
 
 class Userpage extends StatelessWidget {
