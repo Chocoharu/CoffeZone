@@ -40,6 +40,7 @@ dependencies:
   path_provider: ^2.1.5
   path: ^1.9.0
   image_picker: ^1.1.2
+  flutter_launcher_icons: ^0.14.1
 
 dev_dependencies:
   flutter_test:
@@ -51,9 +52,13 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
-
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "asset/icon/CoffeeIcon.png"
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -69,6 +74,7 @@ flutter:
   #   - images/a_dot_ham.jpeg 
   assets:
     - asset/screen/Capuccino.jpeg
+    - asset/icon/CoffeeIcon.png
     - asset/JSON/recipe.json
     - asset/JSON/product.json
     - asset/JSON/validacion.json

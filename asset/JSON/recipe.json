@@ -1,11 +1,38 @@
 [
   {
     "name": "Cappuccino",
-    "preparationTime": "5 minutes",
-    "ingredients": ["Coffee", "Milk", "Sugar"],
-    "description": "A delicious coffee drink.",
+    "preparationTime": "5 minutos",
+    "ingredients": ["Café", "Leche", "Azúcar"],
+    "description": "Una deliciosa bebida de café.",
     "user": "Chef Juan",
     "publicationTime": "2024-11-09T12:00:00Z",
+    "image": "asset/screen/Capuccino.jpeg"
+  },
+  {
+    "name": "Latte",
+    "preparationTime": "5 minutos",
+    "ingredients": ["Café", "Leche", "Espuma de leche"],
+    "description": "Un café suave con leche.",
+    "user": "Chef María",
+    "publicationTime": "2024-10-15T15:30:00Z",
+    "image": "asset/screen/Capuccino.jpeg"
+  },
+  {
+    "name": "Café Mocha",
+    "preparationTime": "10 minutos",
+    "ingredients": ["Café", "Leche", "Chocolate", "Crema batida"],
+    "description": "Un café con un toque de chocolate.",
+    "user": "Chef Pedro",
+    "publicationTime": "2024-09-20T13:00:00Z",
+    "image": "asset/screen/Capuccino.jpeg"
+  },
+  {
+    "name": "Café Americano",
+    "preparationTime": "3 minutos",
+    "ingredients": ["Café", "Agua caliente"],
+    "description": "Un café negro diluido con agua caliente.",
+    "user": "Chef Ana",
+    "publicationTime": "2024-08-05T11:00:00Z",
     "image": "asset/screen/Capuccino.jpeg"
   }
 ]
