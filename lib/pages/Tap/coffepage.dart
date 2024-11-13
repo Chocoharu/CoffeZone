@@ -1,5 +1,7 @@
 import 'package:coffe_zone/class/recipe.dart';
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
+
 
 class CoffePage extends StatefulWidget {
   final List<Recipe> recipes;
@@ -19,6 +21,29 @@ class CoffePage extends StatefulWidget {
 }
 
 class _CoffePageState extends State<CoffePage> {
+  void _shareRecipe(Recipe recipe) {
+    // Construimos un mensaje con los detalles de la receta
+    final String recipeDetails = '''
+  🍵 *${recipe.name}*
+
+  🕒 Tiempo de preparación: ${recipe.preparationTime}
+  📜 Ingredientes: ${recipe.ingredients.join(', ')}
+
+  📖 Descripción:
+  ${recipe.description}
+
+  👤 Publicado por: ${recipe.user}
+  📅 Fecha de publicación: ${recipe.publicationTime.toLocal().toString().split(' ')[0]}
+
+  ¡Prueba esta deliciosa receta desde Coffee Zone!
+    ''';
+
+    // Usamos Share.share para compartir el mensaje a través de cualquier app compatible (WhatsApp, correo, etc.)
+    Share.share(
+      recipeDetails,
+      subject: '¡Descubre esta receta de ${recipe.name}!',
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,18 +109,32 @@ class _CoffePageState extends State<CoffePage> {
                         const SizedBox(height: 8),
                         Align(
                           alignment: Alignment.centerRight,
-                          child: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                widget.onFavoriteToggle(recipe);
-                              });
-                            },
-                            icon: Icon(
-                              isFavorite ? Icons.favorite : Icons.favorite_border,
-                              color: Colors.red,
-                            ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    widget.onFavoriteToggle(recipe);
+                                  });
+                                },
+                                icon: Icon(
+                                  isFavorite ? Icons.favorite : Icons.favorite_border,
+                                  color: Colors.red,
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  _shareRecipe(recipe);
+                                },
+                                icon: const Icon(
+                                  Icons.share,
+                                  color: Colors.green,
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
+                        )
                       ],
                     ),
                   ),
