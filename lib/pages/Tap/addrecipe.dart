@@ -105,7 +105,7 @@ class _AddrecipeState extends State<Addrecipe> {
         description: _descriptionController.text,
         user: user,
         publicationTime: DateTime.now(),
-        image: _imageFile?.path ?? 'asset/screen/Capuccino.jpeg',
+        image: _imageFile?.path ?? 'asset/Images/Capuccino.jpeg',
       );
 
       widget.onAddRecipe(newRecipe);

@@ -6,6 +6,7 @@ import 'package:coffe_zone/pages/draw/userpage.dart';
 import 'package:coffe_zone/class/product.dart';
 import 'package:coffe_zone/class/recipe.dart';
 import 'package:coffe_zone/class/user.dart';
+import 'package:coffe_zone/pages/draw/validation.dart';
 import 'package:flutter/services.dart';
 //import 'dart:io';
 import 'dart:convert';
@@ -192,6 +193,19 @@ Future<void> _loadData() async {
                 );
               },
             ),
+              ListTile(
+                leading: const Icon(Icons.rate_review, color: Colors.brown),
+                title: const Text('Validation'),
+                onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                  builder: (context) => const Validation(),
+                  ),
+                );
+                },
+              ),
           ],
         ),
       ),

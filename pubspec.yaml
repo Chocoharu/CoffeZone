@@ -41,6 +41,8 @@ dependencies:
   path: ^1.9.0
   image_picker: ^1.1.2
   flutter_launcher_icons: ^0.14.1
+  flutter_email_sender: ^6.0.3
+  share_plus: ^10.1.2
 
 dev_dependencies:
   flutter_test:
@@ -59,6 +61,8 @@ flutter_icons:
   android: true
   ios: true
   image_path: "asset/icon/CoffeeIcon.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "asset/icon/CoffeeIcon.png"
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -73,7 +77,10 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg 
   assets:
-    - asset/screen/Capuccino.jpeg
+    - asset/Images/Capuccino.jpeg
+    - asset/Images/Latte.jpg
+    - asset/Images/CafeMocha.jpg
+    - asset/Images/CafeAmericano.jpg
     - asset/icon/CoffeeIcon.png
     - asset/JSON/recipe.json
     - asset/JSON/product.json

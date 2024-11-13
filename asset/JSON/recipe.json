@@ -6,7 +6,7 @@
     "description": "Una deliciosa bebida de café.",
     "user": "Chef Juan",
     "publicationTime": "2024-11-09T12:00:00Z",
-    "image": "asset/screen/Capuccino.jpeg"
+    "image": "asset/Images/Capuccino.jpeg"
   },
   {
     "name": "Latte",
@@ -15,7 +15,7 @@
     "description": "Un café suave con leche.",
     "user": "Chef María",
     "publicationTime": "2024-10-15T15:30:00Z",
-    "image": "asset/screen/Capuccino.jpeg"
+    "image": "asset/Images/Latte.jpg"
   },
   {
     "name": "Café Mocha",
@@ -24,7 +24,7 @@
     "description": "Un café con un toque de chocolate.",
     "user": "Chef Pedro",
     "publicationTime": "2024-09-20T13:00:00Z",
-    "image": "asset/screen/Capuccino.jpeg"
+    "image": "asset/Images/CafeMocha.jpg"
   },
   {
     "name": "Café Americano",
@@ -33,6 +33,6 @@
     "description": "Un café negro diluido con agua caliente.",
     "user": "Chef Ana",
     "publicationTime": "2024-08-05T11:00:00Z",
-    "image": "asset/screen/Capuccino.jpeg"
+    "image": "asset/Images/CafeAmericano.jpg"
   }
 ]
