@@ -119,7 +119,7 @@ Future<void> _loadData() async {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(widget.title),
         automaticallyImplyLeading: false,
         leading: Builder(
@@ -152,18 +152,18 @@ Future<void> _loadData() async {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
         onTap: _onItemTapped,
       ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
+            DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Theme.of(context).colorScheme.primary,
               ),
-              child: Text(
+              child: const Text(
                 'Menu',
                 style: TextStyle(
                   color: Colors.white,
@@ -172,7 +172,7 @@ Future<void> _loadData() async {
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.person),
+              leading: const Icon(Icons.person, color: Colors.brown),
               title: const Text('User Profile'),
               onTap: () {
                 Navigator.pop(context);
@@ -180,7 +180,7 @@ Future<void> _loadData() async {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.star),
+              leading: const Icon(Icons.star, color: Colors.brown),
               title: const Text('Favourites'),
               onTap: () {
                 Navigator.pop(context);

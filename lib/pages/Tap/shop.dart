@@ -19,6 +19,7 @@ class _ShopState extends State<Shop> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('Tienda'),
         actions: [
           IconButton(
@@ -53,7 +54,7 @@ class _ShopState extends State<Shop> {
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Colors.brown[100],
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Column(

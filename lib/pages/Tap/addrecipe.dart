@@ -109,16 +109,15 @@ class _AddrecipeState extends State<Addrecipe> {
       );
 
       widget.onAddRecipe(newRecipe);
-      //Navigator.pop(context);
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         title: const Text('Agregar Receta'),
-      ),
+      ),*/
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Form(
