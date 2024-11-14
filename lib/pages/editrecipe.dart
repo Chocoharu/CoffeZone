@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 
 class EditRecipe extends StatefulWidget {
   final Recipe recipe;
+  final Function(Recipe) onSaveEditedRecipe;
 
-  const EditRecipe({Key? key, required this.recipe}) : super(key: key);
+  const EditRecipe({super.key, required this.recipe, required this.onSaveEditedRecipe});
 
   @override
-  _EditRecipeState createState() => _EditRecipeState();
+  State<EditRecipe> createState() => _EditRecipeState();
 }
 
 class _EditRecipeState extends State<EditRecipe> {
+  final _formKey = GlobalKey<FormState>();
   late TextEditingController _nameController;
   late TextEditingController _preparationTimeController;
   late TextEditingController _descriptionController;
@@ -35,17 +37,19 @@ class _EditRecipeState extends State<EditRecipe> {
   }
 
   void _saveEditedRecipe() {
-    final updatedRecipe = Recipe(
-      name: _nameController.text,
-      preparationTime: _preparationTimeController.text,
-      ingredients: _ingredientsController.text.split(', '),
-      description: _descriptionController.text,
-      user: widget.recipe.user, // Mantener el usuario original
-      publicationTime: widget.recipe.publicationTime,
-      image: widget.recipe.image,
-    );
+      Recipe editedRecipe = Recipe(
+        name: _nameController.text,
+        preparationTime: _preparationTimeController.text,
+        ingredients: _ingredientsController.text.split(',').map((s) => s.trim()).toList(),
+        description: _descriptionController.text,
+        user: widget.recipe.user,
+        publicationTime: widget.recipe.publicationTime,
+        image: widget.recipe.image,
+      );
 
-    Navigator.pop(context, updatedRecipe); // Volver y pasar la receta editada
+      widget.onSaveEditedRecipe(editedRecipe);
+      Navigator.pop(context); // Volver a la pantalla anterior después de guardar
+    
   }
 
   @override

@@ -45,6 +45,24 @@ class _CoffePageState extends State<CoffePage> {
       subject: '¡Descubre esta receta de ${recipe.name}!',
     );
   }
+  
+ void _addNewRecipe(Recipe editedRecipe) {
+    setState(() {
+      widget.recipes.add(editedRecipe);  // Se agrega como una receta nueva
+    });
+  }
+  void _editRecipe(Recipe recipe) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => EditRecipe(
+          recipe: recipe,
+          onSaveEditedRecipe: _addNewRecipe,  // Aquí se usa la función que maneja el agregar como nueva
+        ),
+      ),
+    );
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,12 +154,7 @@ class _CoffePageState extends State<CoffePage> {
                               IconButton(
                                 onPressed: () {
                                   if (recipe.user != 'mi_usuario') { // Asegúrate de comparar con el usuario actual
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => EditRecipe(recipe: recipe),
-                                      ),
-                                    );
+                                    _editRecipe(recipe);
                                   }
                                 },
                                 icon: const Icon(
