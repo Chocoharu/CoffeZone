@@ -1,26 +1,47 @@
 # Coffe Zone
 
-## Descripción del Proyecto
-**Coffee Zone** Es una aplicación móvil innovadora diseñada para los amantes del café. Esta plataforma permite a los usuarios explorar, compartir y guardar recetas de café de manera sencilla y eficiente. Con una interfaz intuitiva y atractiva, la aplicación se convierte en el compañero perfecto para aquellos que buscan descubrir nuevas formas de preparar café y gestionar sus recetas favoritas.
+**Coffee Zone** es una aplicación móvil innovadora diseñada especialmente para los amantes del café, ofreciendo una experiencia renovada y competitiva en el mercado de aplicaciones relacionadas con esta bebida. En esta nueva versión, hemos agregado múltiples funcionalidades y mejoras estéticas para atraer aún más a los usuarios.
 
-### Características Principales
-- **Exploración de Recetas**: Navega a través de una amplia variedad de recetas de café, donde puedes ver detalles como el nombre de la receta, tiempo de preparación, lista de ingredientes, descripción, autor y fecha de publicación.
-- **Sistema de Favoritos**: Permite a los usuarios marcar recetas como favoritas para acceder a ellas rápidamente. Las recetas favoritas se pueden visualizar en una sección dedicada, haciendo más fácil la búsqueda de tus preparaciones preferidas.
-- **Agregar Nuevas Recetas**: Los usuarios tienen la opción de contribuir a la aplicación añadiendo sus propias recetas. Se proporciona un formulario que incluye campos para nombre de la receta, tiempo de preparación, ingredientes, descripción e imagen, facilitando el proceso de creación.
-- **Perfil del Usuario**: La aplicación cuenta con una sección de perfil donde los usuarios pueden ver su información personal, incluyendo nombre, nombre de usuario, correo electrónico, fecha de nacimiento y cualquier comentario adicional.
-- **Tienda**: La aplicación cuenta con una seccion de compra la cual podremos comprar diferentes objetos relacionados al cadfe, se el caso de una cafetera, filtros, tazas, etc... la idea es que esta sección ayude a abarcar todo el mercado relacionado al café.
+## ✨ Novedades de la Aplicación
 
-## Requerimientos
-- La aplicación debe de contar con un explorador de recetas.
-- La aplicación debe de contar con una sección de favoritos donde los usuarios podrán guardar su recetas preferidas.
-- La aplicación debe permitir a los usuarios agregar nuevas recetas.
-- La aplicación debe incluir una sección de perfil donde los usuarios pueden ver y editar su información personal.
-- La aplicación debe tener una interfaz de usuario intuitiva con una navegación fácil entre las diferentes secciones.
-- La aplicación debe manejar errores de entrada del usuario y proporcionar mensajes claros y útiles en caso de que se produzcan errores.
-- La aplicación debe de contar con una opcion para compras.
+- **Nueva Estética Visual**  
+  Hemos mejorado el diseño de la interfaz con una paleta de colores cálidos inspirada en el ambiente de una cafetería, asegurando una experiencia visual atractiva y coherente en toda la aplicación. Además, se ha actualizado el ícono de la app para reflejar este nuevo estilo.
 
-## UML
-![UML](https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/UML_Dispositivos%20_Moviles_Fondo.png?)
+- **Explora y Personaliza Recetas**  
+  Ahora, puedes explorar recetas de café compartidas por otros usuarios directamente desde la pantalla de inicio. Además de poder guardarlas como favoritas, tienes la opción de **editarlas** y personalizarlas según tus gustos, volviéndolas únicas.
+
+- **Comparte tus Creaciones**  
+  Comparte tus recetas favoritas con amigos y otros entusiastas del café. También puedes **agregar imágenes** personalizadas a tus publicaciones, ya sea seleccionándolas de tu galería o tomando una foto en tiempo real con tu dispositivo.
+
+- **Gestión de Recetas Propias**  
+  Todas las recetas que publiques se almacenarán en una nueva sección llamada **"My Recipes"**, facilitando su organización y acceso rápido.
+
+- **Retroalimentación del Usuario**  
+  Reconociendo la importancia de la opinión de nuestros usuarios, hemos integrado una sección especial para recibir evaluaciones. Estas se envían directamente al correo de nuestra empresa, permitiendo un contacto más cercano y personal con nuestra comunidad.
+
+### 🚀 Beneficios para los Usuarios
+
+- Interfaz mejorada para una **experiencia de usuario fluida y agradable**.
+- Mayor **personalización y flexibilidad** al explorar y compartir recetas.
+- Nuevo sistema de **retroalimentación** para mejorar continuamente la aplicación.
+
+## Características Principales
+- **Compartir receta**: Ahora nuestros usuarios pueden compartir sus recetas favoritas directamente en redes sociales o enviarlas por correo electrónico, facilitando la difusión de sus creaciones con amigos y familiares.
+- **Images**: Los usuarios tienen la opción de utilizar la cámara de su dispositivo o seleccionar imágenes desde su galería para personalizar las recetas que creen, haciendo cada publicación más atractiva y única.
+- **Editar Recetas**: Ofrecemos la posibilidad de editar recetas existentes creadas por otros usuarios, permitiendo a cada persona personalizarlas y hacerlas suyas. Cabe mencionar que la imagen original de la receta se mantendrá sin cambios.
+- **Opinion Usuario**: Valoramos la opinión de nuestra comunidad. Hemos añadido una nueva sección en el menú lateral (drawer) donde los usuarios pueden enviarnos sus comentarios sobre la última versión de la aplicación. Todas las respuestas se enviarán directamente a nuestro correo electrónico para ayudarnos a mejorar continuamente.
+## Informacion externa.
+- Flutter Email Sender.
+- Share_Plus.
+- Flutter Launcher Icon.
+- Image Picker.
+- Path Provider.
+
+## Diagrama de flujo
+![Diagrama de flujo](https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Diagrama_Flujo.png?)
+
+## Diagrama de Arquitectura
+![Diagrama de arquitectura](https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Diagrama_Arquitectura.png?)
 
 ## Video
 [Video Presentacion](https://youtu.be/rEQ8AztcEuo)
