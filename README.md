@@ -44,12 +44,12 @@
 ![Diagrama de arquitectura](https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Diagrama_Arquitectura.png?)
 
 ## Imágenes Opinión usuarios
-![Opinion 1] (https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Captura de pantalla (41).png?)
-![Opinion 2] (https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Captura de pantalla (42).png?)
-![Opinion 3] (https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Captura de pantalla (43).png?)
-![Opinion 4] (https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Captura de pantalla (44).png?)
-![Opinion 5] (https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Captura de pantalla (45).png?)
-![Opinion 6] (https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Captura de pantalla (46).png?)
+![Opinion 1] (https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Opinion1.png?)
+![Opinion 2] (https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Opinion2.png?)
+![Opinion 3] (https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Opinion3.png?)
+![Opinion 4] (https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Opinion4.png?)
+![Opinion 5] (https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Opinion5.png?)
+![Opinion 6] (https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Opinion6.png?)
 ## Video
 [Video Usuario](https://youtu.be/8atZ24xI0WU)
 [Video Presentación](https://youtu.be/FKL8_Wjf7ig)
