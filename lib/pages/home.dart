@@ -1,7 +1,8 @@
 import 'package:coffe_zone/pages/Tap/addrecipe.dart';
 import 'package:coffe_zone/pages/Tap/coffepage.dart';
 import 'package:coffe_zone/pages/draw/favouriterecipe.dart';
-import 'package:coffe_zone/pages/Tap/shop.dart'; 
+import 'package:coffe_zone/pages/Tap/shop.dart';
+import 'package:coffe_zone/pages/draw/myrecipes.dart'; 
 import 'package:coffe_zone/pages/draw/userpage.dart';
 import 'package:coffe_zone/class/product.dart';
 import 'package:coffe_zone/class/recipe.dart';
@@ -48,6 +49,7 @@ Future<List<Product>> loadProductsFromAssets(String filePath) async {
   List<Recipe> recipes = [];
 
   List<Recipe> favoriteRecipes = [];
+  List<Recipe> myRecipes = [];
 
   List<Product> products = [];
 
@@ -71,6 +73,7 @@ Future<void> _loadData() async {
       ),
       Addrecipe(onAddRecipe: _addRecipe),
       Shop(productsList: products),
+      Myrecipes(myRecipes: myRecipes),
     ];
     isLoading = false;
   });
@@ -80,6 +83,8 @@ Future<void> _loadData() async {
     setState(() {
       recipes.add(recipe);
       _widgetOptions[0] = CoffePage(recipes: recipes, onFavoriteToggle: _toggleFavorite, favoriteRecipes: favoriteRecipes,);
+      myRecipes.add(recipe);
+      _widgetOptions[3] = Myrecipes(myRecipes: myRecipes);
     });
   }
 
@@ -204,6 +209,19 @@ Future<void> _loadData() async {
                   builder: (context) => const Validation(),
                   ),
                 );
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.book, color: Colors.brown),
+                title: const Text('My Recipes'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Myrecipes(myRecipes: myRecipes),
+                    ),
+                  );
                 },
               ),
           ],

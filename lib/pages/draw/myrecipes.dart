@@ -10,7 +10,7 @@ class Myrecipes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Favoritos'),
+        title: const Text('Mis recetas'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

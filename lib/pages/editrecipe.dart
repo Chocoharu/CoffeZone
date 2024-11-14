@@ -12,12 +12,10 @@ class EditRecipe extends StatefulWidget {
 }
 
 class _EditRecipeState extends State<EditRecipe> {
-  final _formKey = GlobalKey<FormState>();
   late TextEditingController _nameController;
   late TextEditingController _preparationTimeController;
   late TextEditingController _descriptionController;
   late TextEditingController _ingredientsController;
-
   @override
   void initState() {
     super.initState();
