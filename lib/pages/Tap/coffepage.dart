@@ -1,4 +1,5 @@
 import 'package:coffe_zone/class/recipe.dart';
+import 'package:coffe_zone/pages/editrecipe.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -130,6 +131,22 @@ class _CoffePageState extends State<CoffePage> {
                                 icon: const Icon(
                                   Icons.share,
                                   color: Colors.green,
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  if (recipe.user != 'mi_usuario') { // Asegúrate de comparar con el usuario actual
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => EditRecipe(recipe: recipe),
+                                      ),
+                                    );
+                                  }
+                                },
+                                icon: const Icon(
+                                  Icons.edit,
+                                  color: Colors.blue,
                                 ),
                               ),
                             ],

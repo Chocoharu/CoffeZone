@@ -1,4 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.Choco.CoffeeZone">
     <application
         android:label="coffe_zone"
         android:name="${applicationName}"
