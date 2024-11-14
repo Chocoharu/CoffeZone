@@ -44,4 +44,6 @@
 ![Diagrama de arquitectura](https://github.com/Chocoharu/CoffeZone/blob/main/asset/ImagenesReadMe/Diagrama_Arquitectura.png?)
 
 ## Video
-[Video Presentacion](https://youtu.be/rEQ8AztcEuo)
+[Video Usuario](https://youtu.be/8atZ24xI0WU)
+[Video Presentación](https://youtu.be/FKL8_Wjf7ig)
+
