@@ -9,6 +9,11 @@ class EmailService {
       isHTML: false,
     );
 
-    await FlutterEmailSender.send(sendEmail);
+    try {
+      await FlutterEmailSender.send(sendEmail);
+      print('Correo enviado exitosamente');
+    } catch (error) {
+      print('Error al enviar correo: $error');
+    }
   }
 }
